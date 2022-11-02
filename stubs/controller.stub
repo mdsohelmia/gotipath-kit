@@ -1,0 +1,39 @@
+package {{controllerName}}
+
+import (
+	"net/http"
+
+	"github.com/MdSohelMia/gotipath-kit/core"
+	"github.com/gin-gonic/gin"
+)
+
+type {{controllerName}}Controller struct {
+	logger core.Logger
+	db     core.Database
+}
+
+func New{{controllerName}}Controller(logger core.Logger, db core.Database) {{controllerName}}Controller {
+	return {{controllerName}}Controller{
+		logger: logger,
+		db:     db,
+	}
+}
+func ({{controllerName}} {{controllerName}}Controller) Index(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"data": "index"})
+}
+
+func ({{controllerName}} {{controllerName}}Controller) Store(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"data": "Store"})
+}
+
+func ({{controllerName}} {{controllerName}}Controller) Update(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"data": "Update"})
+}
+
+func ({{controllerName}} {{controllerName}}Controller) Show(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"data": "Show"})
+}
+
+func ({{controllerName}} {{controllerName}}Controller) Destroy(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"data": "Destroy"})
+}
